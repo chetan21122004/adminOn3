@@ -17,8 +17,8 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { useAuth } from "@/contexts/AuthContext";
+import { GlobalSearch } from "@/components/admin/GlobalSearch";
 
 interface AdminLayoutProps {
   children: ReactNode;
@@ -107,15 +107,7 @@ export const AdminLayout = ({ children }: AdminLayoutProps) => {
       >
         {/* Top Bar */}
         <header className="h-16 bg-card border-b border-border flex items-center justify-between px-8 sticky top-0 z-30">
-          <div className="flex-1 max-w-xl">
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-              <Input
-                placeholder="Search products, orders, users..."
-                className="pl-10 admin-input"
-              />
-            </div>
-          </div>
+          <GlobalSearch />
 
           <div className="flex items-center gap-4">
             <Button variant="ghost" size="icon" className="relative">
