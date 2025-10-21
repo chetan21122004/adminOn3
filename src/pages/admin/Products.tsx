@@ -137,7 +137,7 @@ const Products = () => {
                         </td>
                         <td>
                           <div className="flex items-center gap-2">
-                            <Link to={`/admin/products/${product.id}/edit`}>
+                            <Link to={`/admin/products/${product.id}`}>
                               <Button variant="ghost" size="icon" className="hover:text-primary">
                                 <Edit className="h-4 w-4" />
                               </Button>

@@ -10,6 +10,8 @@ import Auth from "./pages/Auth";
 import Dashboard from "./pages/admin/Dashboard";
 import Products from "./pages/admin/Products";
 import ProductForm from "./pages/admin/ProductForm";
+import Collections from "./pages/admin/Collections";
+import CollectionForm from "./pages/admin/CollectionForm";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,7 +31,10 @@ const App = () => (
             <Route path="/admin" element={<AdminGuard><Dashboard /></AdminGuard>} />
             <Route path="/admin/products" element={<AdminGuard><Products /></AdminGuard>} />
             <Route path="/admin/products/new" element={<AdminGuard><ProductForm /></AdminGuard>} />
-            <Route path="/admin/products/:id/edit" element={<AdminGuard><ProductForm /></AdminGuard>} />
+            <Route path="/admin/products/:id" element={<AdminGuard><ProductForm /></AdminGuard>} />
+            <Route path="/admin/collections" element={<AdminGuard><Collections /></AdminGuard>} />
+            <Route path="/admin/collections/new" element={<AdminGuard><CollectionForm /></AdminGuard>} />
+            <Route path="/admin/collections/:id" element={<AdminGuard><CollectionForm /></AdminGuard>} />
             
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
