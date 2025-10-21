@@ -29,6 +29,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         
         // Check admin role when session changes
         if (session?.user) {
+          setLoading(true);
           setTimeout(async () => {
             const { data } = await supabase
               .from("user_roles")
@@ -38,9 +39,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
               .maybeSingle();
             
             setIsAdmin(!!data);
+            setLoading(false);
           }, 0);
         } else {
           setIsAdmin(false);
+          setLoading(false);
         }
       }
     );
