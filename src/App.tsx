@@ -14,6 +14,10 @@ import Collections from "./pages/admin/Collections";
 import CollectionForm from "./pages/admin/CollectionForm";
 import Codes from "./pages/admin/Codes";
 import CodeForm from "./pages/admin/CodeForm";
+import Orders from "./pages/admin/Orders";
+import Users from "./pages/admin/Users";
+import Blog from "./pages/admin/Blog";
+import BlogForm from "./pages/admin/BlogForm";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -40,6 +44,11 @@ const App = () => (
             <Route path="/admin/codes" element={<AdminGuard><Codes /></AdminGuard>} />
             <Route path="/admin/codes/new" element={<AdminGuard><CodeForm /></AdminGuard>} />
             <Route path="/admin/codes/:id" element={<AdminGuard><CodeForm /></AdminGuard>} />
+            <Route path="/admin/orders" element={<AdminGuard><Orders /></AdminGuard>} />
+            <Route path="/admin/users" element={<AdminGuard><Users /></AdminGuard>} />
+            <Route path="/admin/blog" element={<AdminGuard><Blog /></AdminGuard>} />
+            <Route path="/admin/blog/new" element={<AdminGuard><BlogForm /></AdminGuard>} />
+            <Route path="/admin/blog/:id" element={<AdminGuard><BlogForm /></AdminGuard>} />
             
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
