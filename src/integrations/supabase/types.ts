@@ -334,34 +334,49 @@ export type Database = {
       }
       orders: {
         Row: {
-          address_id: string
+          address_id: string | null
           created_at: string | null
           id: string
+          items: Json | null
           razorpay_order_id: string | null
           razorpay_payment_id: string | null
+          shipping_address: Json | null
+          shipping_cost: number | null
           status: string
+          subtotal: number | null
+          total: number | null
           total_amount: number
           updated_at: string | null
           user_id: string
         }
         Insert: {
-          address_id: string
+          address_id?: string | null
           created_at?: string | null
           id?: string
+          items?: Json | null
           razorpay_order_id?: string | null
           razorpay_payment_id?: string | null
+          shipping_address?: Json | null
+          shipping_cost?: number | null
           status?: string
+          subtotal?: number | null
+          total?: number | null
           total_amount: number
           updated_at?: string | null
           user_id: string
         }
         Update: {
-          address_id?: string
+          address_id?: string | null
           created_at?: string | null
           id?: string
+          items?: Json | null
           razorpay_order_id?: string | null
           razorpay_payment_id?: string | null
+          shipping_address?: Json | null
+          shipping_cost?: number | null
           status?: string
+          subtotal?: number | null
+          total?: number | null
           total_amount?: number
           updated_at?: string | null
           user_id?: string
